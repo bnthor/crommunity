@@ -258,7 +258,7 @@ textarea {
             display: flex; }
 
             .main {
-              flex: 0 0 auto;
+              flex: 1 1 auto;
               max-width: 42rem; }
 
               .sidebar {

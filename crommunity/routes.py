@@ -213,13 +213,6 @@ def login():
         remember = request.form.get("remember")
         next_page = request.form.get("next")
 
-        print('!!!!!!!!!')
-        print('!!!!!!!!!')
-        print('!!!!!!!!!')
-        print('!!!!!!!!!')
-        print('!!!!!!!!!')
-        print(email, password, remember)
-
         if not email:
             flash(gettext("Email is required"), "danger")
             return redirect(url_for('login'))
@@ -229,9 +222,6 @@ def login():
             return redirect(url_for('login'))
 
         user = User.query.filter_by(email=email).first()
-
-        print('!!!!!!!!!')
-        print(user.username)
 
         if not user:
             flash(gettext("User was not found"), "danger")
@@ -247,9 +237,6 @@ def login():
 
         # If all went well
         login_user(user, remember=remember)
-
-        print('!!!!!!!!!')
-        print(user.username)
 
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('index')
