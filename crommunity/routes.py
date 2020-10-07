@@ -473,7 +473,7 @@ def new_post():
                     file_ext != validate_image(picture.stream):
                 flash(gettext("Invalid image format"), "danger")
             filename = str(datetime.now()).replace(":", "-") + file_ext
-            picture.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            picture.save(os.path.join(app.root_path, app.config['UPLOAD_FOLDER'], filename))
 
         post = Post(
             title = title,
@@ -524,11 +524,11 @@ def post(id):
                     file_ext != validate_image(picture.stream):
                 flash(gettext("Invalid image format"), "danger")
             filename = str(datetime.now()).replace(":", "-") + file_ext
-            picture.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            picture.save(os.path.join(app.root_path, app.config['UPLOAD_FOLDER'], filename))
 
         # Else, delete the existing picture
         if (filename == '' or filename != post.picture) and post.picture:
-            os.remove(os.path.join(app.config['UPLOAD_FOLDER'], post.picture))
+            os.remove(os.path.join(app.root_path, app.config['UPLOAD_FOLDER'], post.picture))
 
         post.title = title
         post.picture = filename
@@ -577,7 +577,7 @@ def delete_post(id):
 
         # Delete post picture
         if post.picture:
-            os.remove(os.path.join(app.config['UPLOAD_FOLDER'], post.picture))
+            os.remove(os.path.join(app.root_path, app.config['UPLOAD_FOLDER'], post.picture))
 
         # Delete all post activity
         db.session.query(Vote).filter_by(post_id=id).delete()

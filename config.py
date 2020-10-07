@@ -18,6 +18,6 @@ HOST_NAME = "OhMyHost"
 HOST_ADDRESS = "43 second street, New York, NY"
 
 # File uploads
-UPLOAD_FOLDER = 'crommunity/uploads'
+UPLOAD_FOLDER = 'uploads'
 UPLOAD_EXTENSIONS = ['.jpg', '.png', '.gif']
 MAX_CONTENT_LENGTH = 16 * 1024 * 1024
