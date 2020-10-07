@@ -1,0 +1,111 @@
+{% extends "_layout.html" %}
+{% block content %}
+<div class="container legal">
+    <h1>{{ website }} Privacy Policy</h1>
+    <p>This privacy policy will explain how our organization uses the personal data we collect from you when you use our website.</p>
+
+    <h2>Topics:</h2>
+    <ol>
+        <li><a href="#pp1">What data do we collect?</a></li>
+        <li><a href="#pp2">How do we collect your data?</a></li>
+        <li><a href="#pp3">How will we use your data?</a></li>
+        <li><a href="#pp4">How do we store your data?</a></li>
+        <li><a href="#pp5">What are your data protection rights?</a></li>
+        <li><a href="#pp6">What are cookies?</a></li>
+        <li><a href="#pp7">How do we use cookies?</a></li>
+        <li><a href="#pp8">What types of cookies do we use?</a></li>
+        <li><a href="#pp9">How to manage your cookies</a></li>
+        <li><a href="#pp10">Children's Information</a></li>
+        <li><a href="#pp11">Privacy policies of other websites</a></li>
+        <li><a href="#pp12">Changes to our privacy policy</a></li>
+        <li><a href="#pp13">How to contact us</a></li>
+        <li><a href="#pp14">How to contact the appropriate authorities</a></li>
+    </ol>
+
+    <h2 id="pp1">What data do we collect?</h2>
+    <p>Our Company collects the following data:</p>
+    <ul>
+        <li>Personal identification information:
+            <ul>
+                <li>Email address (to identify you)</li>
+                <li>Photos and data you voluntarily provide (your posts and comments)</li>
+            </ul>
+        </li>
+        <li>Posts you write and publish on {{ website }}</li>
+    </ul>
+
+    <h2 id="pp2">How do we collect your data?</h2>
+    <p>You directly provide {{ website }} with most of the data we collect. We collect data and process data when you:</p>
+    <ul>
+        <li>Register.</li>
+        <li>Write and publish a post or a comment on {{ website }}</li>
+        <li>Use or view {{ website }} via your browser’s cookies.</li>
+    </ul>
+
+    <h2 id="pp3">How will we use your data?</h2>
+    <p>{{ website }} collects your data so that we can:</p>
+    <ul>
+        <li>Manage your account.</li>
+        <li>To keep you logged in between visits.</li>
+        <li>Email you when you request a password reset.</li>
+    </ul>
+
+    <h2 id="pp4">How do we store your data?</h2>
+    <p>Our Company securely stores your data at [enter the location and describe security precautions taken].</p>
+    <p>Our Company will not keep your data after you delete your account. Once your account delete, we will delete your profile, posts, votes and comments.</p>
+
+    <h2 id="pp5">What are your data protection rights?</h2>
+    <p>Our Company would like to make sure you are fully aware of all of your data protection rights. Every user is entitled to the following:</p>
+    <p><strong>The right to access</strong> – You have the right to request Our Company for copies of your personal data. We may charge you a small fee for this service.</p>
+    <p><strong>The right to rectification</strong> – You have the right to request that Our Company correct any information you believe is inaccurate. You also have the right to request Our Company to complete the information you believe is incomplete.</p>
+    <p><strong>The right to erasure</strong> – You have the right to request that Our Company erase your personal data, under certain conditions.</p>
+    <p><strong>The right to restrict processing</strong> – You have the right to request that Our Company restrict the processing of your personal data, under certain conditions.</p>
+    <p><strong>The right to object to processing</strong> – You have the right to object to Our Company’s processing of your personal data, under certain conditions.</p>
+    <p><strong>The right to data portability</strong> – You have the right to request that Our Company transfer the data that we have collected to another organization, or directly to you, under certain conditions.</p>
+    <p>If you make a request, we have one month to respond to you. If you would like to exercise any of these rights, please contact us (our coordinates are at the bottom of this page).</p>
+
+    <h2 id="pp6">What are cookies?</h2>
+    <p>Cookies are text files placed on your computer to collect standard Internet log information and visitor behavior information. When you visit {{ website }}, we may collect information from you automatically through cookies or similar technology</p>
+    <p>For further information, visit <a href="http://allaboutcookies.org">allaboutcookies.org</a>.</p>
+
+    <h3 id="pp7">How do we use cookies?</h3>
+    <p>{{ website }} uses cookies only to:</p>
+    <ul>
+        <li>Keep you signed in</li>
+        <li>Manage your account.</li>
+    </ul>
+
+    <h3 id="pp8">What types of cookies do we use?</h3>
+    <p>There are a number of different types of cookies, however, our website uses:</p>
+    <ul>
+        <li>Functionality – Our Company uses these cookies so that we recognize you on our website and remember your previously selected preferences. These could include what language you prefer and location you are in. Only first-party cookies are used.</li>
+    </ul>
+
+    <h3 id="pp9">How to manage cookies</h3>
+    <p>You can set your browser not to accept cookies, and the above website tells you how to remove cookies from your browser. However, in a few cases, some of our website features may not function as a result.</p>
+
+    <h2 id="pp10">Children's Information</h2>
+    <p>Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity.</p>
+    <p>Crommunity does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.</p>
+
+    <h2 id="pp11">Privacy policies of other websites</h2>
+    <p>Our website contains links to other websites. Our privacy policy applies only to our website, so if you click on a link to another website, you should read their privacy policy.</p>
+
+    <h2 id="pp12">Changes to our privacy policy</h2>
+    <p>Our Company keeps its privacy policy under regular review and places any updates on this web page. This privacy policy was last updated on <strong>6 October 2020</strong>.</p>
+
+    <h2 id="pp13">How to contact us</h2>
+    <p>If you have any questions about Our Company’s privacy policy, the data we hold on you, or you would like to exercise one of your data protection rights, please do not hesitate to contact us:</p>
+    <br/>
+    <strong>Webmaster</strong> : {{ owner.name }} – {{ owner.email }}<br/>
+    <strong>Hoster</strong> : {{ host.name }} – {{ host.address }}<br/>
+    <strong>Data protection officer</strong> : {{ owner.name }} – {{ owner.email }}<br/>
+
+    <h2 id="pp14">How to contact the appropriate authority</h2>
+    <p>Should you wish to report a complaint or if you feel that Our Company has not addressed your concern in a satisfactory manner, you may contact the Information Commissioner’s Office.</p>
+    <ul>
+        <li>UK: <a href="https://ico.org.uk/">ICO</a></li>
+        <li>Europe: <a href="https://www.cnil.fr/en/home">CNIL</a></li>
+    </ul>
+</div>
+{% endblock %}

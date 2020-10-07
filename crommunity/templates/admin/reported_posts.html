@@ -1,0 +1,33 @@
+{% extends "_layout.html" %}
+{% block content %}
+<div class="container admin">
+    <h1><a href="{{ url_for('admin') }}">{{ _('Admin') }}</a> / {{ _("Reported posts") }}</h1>
+    <section>
+        <table class="actable">
+            <tr>
+                <th>{{ _('Post title') }}</th>
+                <th>{{ _('Votes') }}</th>
+                <th>{{ _('Post link') }}</th>
+                <th>{{ _('Actions') }}</th>
+            </tr>
+            {% for post in reports %}
+            <tr>
+                <td>{{ post.title }}</td>
+                <td>{{ post.vote_count }}</td>
+                <td><a href="{{ url_for('post', id=post.id) }}">{{ url_for('post', id=post.id) }}</a></td>
+                <td>
+                    <a href="{{ url_for('enable_post', id=post.id) }}" class="button button--muted">
+                        {{ _('Enable') }}
+                    </a>
+                    {% if current_user.is_admin() %}
+                    <a href="{{ url_for('delete_post', id=post.id) }}" class="button button--danger">
+                        {{ _('Delete') }}
+                    </a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+</div>
+{% endblock %}

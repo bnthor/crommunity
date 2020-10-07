@@ -1,0 +1,50 @@
+.account__info {
+  text-align: center;
+
+  .message {
+    max-width: 94%;
+    width: 16rem;
+    margin: 1rem auto;
+  }
+}
+
+.account__avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.account__form {
+  label {
+    margin: 1rem 0 .5rem 0;
+    display: block;
+    color: $grey-600;
+  }
+  input,
+  .button {
+    display: block;
+    max-width: 94%;
+    width: 16rem;
+    margin: 0 auto .5rem;
+  }
+}
+
+.account__posts {
+
+  h2 {
+    margin: 4rem 0 1rem;
+  }
+
+  table {
+      tr th:last-of-type,
+      tr td:last-of-type {
+          text-align: right;
+      }
+
+      tr td:last-of-type .button {
+          margin-left: .5rem;
+      }
+  }
+}

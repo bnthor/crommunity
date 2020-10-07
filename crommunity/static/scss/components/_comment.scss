@@ -1,0 +1,122 @@
+.comments__title {
+    display: flex;
+    align-items: center;
+    margin: 2rem 0 1rem 0;
+    font-weight: 300;
+    font-size: 1.25rem;
+
+    .material-icons {
+        position: relative;
+        top: 1px;
+        margin-right: .25rem;
+        color: $grey-500;
+    }
+}
+
+.comment {
+    position: relative;
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.comment__avatar {
+    flex: 0 0 2rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    margin-top: .25rem;
+    margin-right: 1rem;
+    overflow: hidden;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+.comment__content {
+    position: relative;
+    flex: 1;
+    background: $grey-100;
+    border-radius: $border-radius;
+    padding: .5rem 1rem;
+    font-size: .88rem;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: .75rem;
+        left: -.5rem;
+        border-style: solid;
+        border-width: .5rem .5rem .5rem 0;
+        border-color: transparent $grey-100 transparent transparent;
+    }
+}
+
+.comment__meta {
+    span {
+        color: $grey-600;
+    }
+}
+
+
+.comment__actions {
+    top: .25rem;
+    right: .5rem;
+
+    &.dropdown {
+        position: absolute;
+    }
+
+    .dropdown__title {
+
+        &::after {
+            content: initial;
+        }
+    }
+
+    .material-icons  {
+        color: $grey-600;
+    }
+
+    .dropdown__menu   {
+        top: 90%;
+        font-size: .88rem;
+    }
+
+    .dropdown__item a {
+        text-decoration: none;
+    }
+}
+
+.comment__form {
+    flex: 1;
+    text-align: right;
+
+    textarea {
+        display: block;
+        width: 100%;
+        resize: vertical;
+        height: 6rem;
+        max-height: 20rem;
+        margin-bottom: .5rem;
+    }
+
+    .button {
+        width: auto;
+        display: inline-block;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+.comment--login {
+    margin-top: 2rem;
+    padding-left: 3rem;
+    justify-content: space-between;
+
+    .button {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}

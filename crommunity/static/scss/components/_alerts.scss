@@ -1,0 +1,54 @@
+.alert {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    border-radius: $border-radius;
+    padding: .5rem 1rem;
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    font-weight: bold;
+    pointer-events: none;
+    transform: translateX(1rem);
+    transition: all 240ms cubic-bezier(0.37, 0, 0.63, 1);
+
+    &.is-visible {
+        opacity: 1;
+        pointer-events: initial;
+        transform: translateX(0);
+    }
+}
+
+.alert--error,
+.alert--danger {
+    background: lighten($red, 32%);
+    color: $red;
+}
+
+.alert--success {
+    background: lighten($green, 32%);
+    color: $green;
+}
+
+.alert__close {
+    display: inline-block;
+    padding: 0;
+    margin-left: .5rem;
+    border: none;
+    background: none;
+    border-radius: 50%;
+    text-align: center;
+    color: currentColor;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    * {
+        vertical-align: text-top;
+    }
+
+    .material-icons {
+        font-size: 1.2rem;
+    }
+}

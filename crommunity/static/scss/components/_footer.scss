@@ -1,0 +1,27 @@
+.footer {
+    padding: 1rem 0;
+    background-color: $grey-100;
+    color: $grey-600;
+    font-size: .88rem;
+
+    .flex {
+        justify-content: space-between;
+    }
+}
+
+.footer__nav {
+    text-align: right;
+
+    a {
+        margin-left: .75rem;
+        color: $grey-700;
+        text-decoration: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer__info,
+    .footer__nav {
+        text-align: center;
+    }
+}

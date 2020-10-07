@@ -1,0 +1,29 @@
+.user__info {
+  text-align: center;
+
+  h2 {
+    font-size: 1rem;
+    color: $grey-600;
+    font-weight: normal;
+  }
+}
+
+.user__avatar {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto .5rem;
+}
+
+.user__posts {
+  text-align: center;
+
+  h3 {
+    margin: 2rem auto 1rem;
+  }
+  a {
+    display: block;
+    padding: .25rem 0;
+  }
+}

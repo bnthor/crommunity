@@ -1,0 +1,34 @@
+{% extends "_layout.html" %}
+{% block content %}
+<div class="center dashboard">
+    <div class="center__item center__item--large">
+        <h1>{{ _("Admin") }}</h1>
+        <div class="flex">
+            <div class="post">
+                <a href="{{ url_for('admin_users') }}">
+                    <i class="material-icons" aria-hidden>people</i>
+                    {{ _("Members") }}
+                </a>
+            </div>
+            <div class="post">
+                <a href="{{ url_for('admin_reported_posts') }}">
+                    <i class="material-icons" aria-hidden>flag</i>
+                    {{ _("Reported posts") }}
+                </a>
+            </div>
+            <div class="post">
+                <a href="{{ url_for('admin_reported_comments') }}">
+                    <i class="material-icons" aria-hidden>chat</i>
+                    {{ _("Reported comments") }}
+                </a>
+            </div>
+            <div class="post" disabled>
+                <a href="#">
+                    <i class="material-icons" aria-hidden>mail</i>
+                    {{ _("Reported messages") }}
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

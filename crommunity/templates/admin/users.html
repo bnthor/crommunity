@@ -1,0 +1,67 @@
+{% extends "_layout.html" %}
+{% block content %}
+<div class="container admin">
+    <h1><a href="{{ url_for('admin') }}">{{ _('Admin') }}</a> / {{ _("Members") }}</h1>
+    <section>
+        <table class="actable">
+            <thead>
+                <tr>
+                    <th>{{ _('Username') }}</th>
+                    <th>{{ _('Email address') }}</th>
+                    <th>{{ _('Role') }}</th>
+                    <th>{{ _('Registration date') }}</th>
+                    <th>{{ _('Actions') }}</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    <form method="POST" action="{{ url_for('promote_user', id=user.id) }}">
+                        {% if current_user.is_mod() %}
+                        {% for role in roles if role != 'guest' %}
+                            {% if user.role == loop.index %}{{ role }}{% endif %}
+                        {% endfor %}
+                        {% elif current_user.is_admin() %}
+                        <select name="new_role" onchange="this.form.submit()">
+                            {% for role in roles if role != 'guest' %}
+                            <option value="{{ loop.index }}" {% if user.role == loop.index %}selected{% endif %}>
+                                {{ role }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                        {% endif %}
+                    </form>
+                </td>
+                <td>{{ user.created|date }}</td>
+                <td>
+                    {% if not user.enabled %}
+                    <a href="{{ url_for('enable_user', id=user.id) }}" class="button button--muted">
+                        {{ _('Enable') }}
+                    </a>
+                    {% else %}
+                    <a href="{{ url_for('disable_user', id=user.id) }}" class="button button--muted">
+                        {{ _('Disable') }}
+                    </a>
+                    {% endif %}
+                    {% if current_user.is_admin() %}
+                    <a href="{{ url_for('delete_user', id=user.id) }}" class="button button--danger">
+                        {{ _('Delete') }}
+                    </a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="4">{{ _("Total") }}</td>
+                    <td>{{ user_count }} {{ _('users') }}</td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+</div>
+{% endblock %}

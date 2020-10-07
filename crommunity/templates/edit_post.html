@@ -1,0 +1,31 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="center">
+    <div class="center__item center__item--large">
+      <h1 class="center__title">{{ _("Edit post") }}</h1>
+      <form class="center__form" method="POST" action="{{ url_for('post', id=post.id) }}" enctype="multipart/form-data">
+        <fieldset class="center__fields">
+          <input type="text" name="title" value="{{ post.title }}" placeholder="{{ _('Post title') }}" required />
+          <div class="fileUpload">
+            <input id="picture" name="picture" type="file" accept="image/*" />
+            {% if post.picture %}
+              <label class="fileUpload__label" for="picture" data-placeholder="{{ _('Post cover image') }}">
+                {{ post.picture }}
+              </label>
+            {% else %}
+              <label class="fileUpload__label is-placeholder" for="picture" data-placeholder="{{ _('Post cover image') }}"></label>
+            {% endif %}
+            <span class="fileUpload__reset" aria-label="{{ _('Reset') }}">
+              <i class="material-icons" aria-hidden>clear</i>
+            </span>
+            <span class="fileUpload__button">{{ _("Choose a file...") }}</span>
+          </div>
+          <input type="url" name="link" value="{{ post.link }}" placeholder="{{ _('Link') }} ({{ _('optional') }})" />
+          <textarea name="content" placeholder="{{ _('Text') }} ({{ _('optional') }})">{{ post.content }}</textarea>
+          <button class="button button--secondary" type="submit">{{ _("Save") }}</button>
+        </fieldset>
+      </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,99 @@
+.dashboard {
+    text-align: center;
+
+    h1 {
+        margin-bottom: 2rem;
+        font-weight: 300;
+    }
+
+    .flex {
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .post {
+        flex: 0 0 calc(50% - .5rem);
+        margin-bottom: 1rem;
+
+        &:hover,
+        &:focus {
+            border-color: $link-color;
+            outline: 0;
+            box-shadow: 0 0 0 2px rgba($link-color, .24);
+        }
+
+        a {
+            display: block;
+            text-decoration: none;
+        }
+
+        .material-icons {
+            display: block;
+            margin: 0 auto;
+            color: $grey-300;
+            font-size: 1.5rem;
+        }
+
+        &[disabled] {
+            pointer-events: none;
+
+            a {
+                color: $grey-300;
+            }
+        }
+    }
+}
+.admin {
+
+    h1 {
+        margin-bottom: 2rem;
+        font-weight: 300;
+        font-size: 1.5rem;
+
+        a {
+            text-decoration: none;
+            color: $grey-600;
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+    }
+
+    .actable {
+        tr th:last-of-type,
+        tr td:last-of-type {
+            text-align: right;
+        }
+
+        tr td:last-of-type .button {
+            margin-left: .5rem;
+        }
+
+        form {
+            margin: 0;
+        }
+    }
+}
+
+.admin--comments {
+
+    .actable {
+
+        tr th,
+        tr td {
+            text-align: center;
+        }
+        tr th:first-of-type,
+        tr td:first-of-type{
+            width: 60%;
+            text-align: left;
+        }
+
+        .button {
+            display: inline-block;
+            margin-bottom: .5rem;
+            margin-right: -.25rem;
+        }
+    }
+}

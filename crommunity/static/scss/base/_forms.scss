@@ -1,0 +1,138 @@
+form {
+  display: block;
+  margin-bottom: 1.5rem;
+
+  button {
+    display: block;
+    width: 100%;
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+input[type="url"],
+input[type="date"],
+input[type="number"],
+textarea,
+select,
+.fileUpload__label {
+  display: block;
+  width: 100%;
+  margin-bottom: .5rem;
+  padding: .5rem;
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  font-size: 100%;
+
+  &:focus {
+    border-color: $link-color;
+    outline: 0;
+    box-shadow: 0 0 0 2px rgba($link-color, .24);
+  }
+
+  &::placeholder {
+    color: $grey-600;
+  }
+}
+
+textarea {
+  resize: vertical;
+  height: 6rem;
+  max-height: 20rem;
+}
+
+label * {
+  vertical-align: text-top;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  display: inline-block;
+  margin: 2px 2px 2px 0;
+}
+
+.fileUpload {
+  position: relative;
+
+  input {
+    opacity: 0;
+
+    &:focus ~ .fileUpload__label{
+      border-color: $link-color;
+      outline: 0;
+      box-shadow: 0 0 0 2px rgba($link-color, .24);
+    }
+  }
+
+  &.has-value {
+
+    .fileUpload__label {
+      padding-left: 2.25rem;
+      color: $grey-900;
+    }
+
+    .fileUpload__reset {
+      display: flex;
+    }
+  }
+}
+
+.fileUpload__label {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  color: $grey-600;
+
+  &:hover {
+    cursor: text;
+  }
+}
+
+.fileUpload__button {
+  position: absolute;
+  z-index: 0;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 .75rem;
+  background: $grey-200;
+  color: $grey-700;
+  border-top-right-radius: $border-radius / 2;
+  border-bottom-right-radius: $border-radius / 2;
+}
+
+.fileUpload__reset {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: .5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: $grey-200;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transform: translateY(-50%);
+
+  .material-icons {
+    color: $grey-600;
+    font-size: 1rem;
+  }
+
+  &:hover {
+    cursor: pointer;
+    background: lighten($red, 32%);
+
+    .material-icons {
+      color: $red;
+    }
+  }
+}

@@ -1,0 +1,28 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="container user">
+  <main class="main">
+    <section class="user__info">
+        <figure class="user__avatar">
+            <img src="{{ user.email | gravatar }}"/>
+        </figure>
+        <div>
+            <h1>{{ user.username }}</h1>
+            <h2>{{ _("Registered on:") }} {{ user.created|date }}</h2>
+        </div>
+    </section>
+    <section class="user__posts">
+        <h3>
+            {% trans name=user.username %}{{ name }}'s posts{% endtrans %}
+        </h3>
+        {% for post in user.posts %}
+            <a href="{{ url_for('post', id=post.id) }}">
+                {{ post.title }}
+            </a>
+        {% endfor %}
+        </table>
+    </section>
+  </main>
+</div>
+{% endblock %}

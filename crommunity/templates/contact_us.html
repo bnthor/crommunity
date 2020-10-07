@@ -1,0 +1,19 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="center">
+    <div class="center__item center__item--large">
+      <h1 class="center__title">{{ _("Contact us") }}</h1>
+      <form class="center__form" method="POST" action="{{ url_for('contact_us') }}">
+        <fieldset class="center__fields">
+          <input type="text" name="email" placeholder="{{ _('Your email address') }}" required {% if current_user.is_authenticated %}value="{{ current_user.email }}"{% endif %}/>
+          <input type="text" name="object" placeholder="{{ _('Object') }}" required />
+          <textarea name="body" placeholder="{{ _('Text') }}" required></textarea>
+          <button class="button button--secondary" type="submit">{{ _("Send") }}</button>
+        </fieldset>
+
+        <input type="text" name="trp" value="" placeholder="{{ _('company') }}" class="register__trp"/>
+      </form>
+    </div>
+</div>
+{% endblock %}

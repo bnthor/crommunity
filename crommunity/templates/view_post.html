@@ -1,0 +1,77 @@
+{% extends "_layout.html" %}
+{% block content %}
+<div class="flex container">
+    <main class="main">
+      {% with post_style = 'full' %}
+        {% include 'partials/post.html' %}
+      {% endwith %}
+      <section class="comments" id="comments">
+        <h3 class="comments__title">
+          <i class="material-icons" aria-hidden>chat</i>
+          {{ comments|count }}
+          {% if comments|count > 1 %}
+            {{ _("Comments") }}
+          {% else %}
+            {{ _("Comment") }}
+          {% endif %}
+        </h3>
+        {% for comment in comments %}
+        <div class="comment">
+            <figure class="comment__avatar">
+                <img src="{{ comment.author.email | gravatar }}"/>
+            </figure>
+            <div class="comment__content">
+                <div class="comment__meta"><strong>{{ comment.author.username }}</strong> - <span>{{ comment.created|date }}<span></div>
+                    {{ comment.content }}
+            </div>
+            {% if current_user.is_authenticated %}
+            <div class="comment__actions dropdown">
+                <button type="button" class="dropdown__title" aria-label="{{ _('More') }}" aria-expanded="false" aria-controls="comment-dropdown-{{ comment.id }}">
+                    <i class="material-icons" aria-hidden>more_horiz</i>
+                </button>
+                <ul class="dropdown__menu" id="comment-dropdown-{{ comment.id }}">
+                    {% if current_user.is_admin() or current_user.is_mod() %}
+                    <li class="dropdown__item">
+                        <a href="{{ url_for('disable_comment', id=comment.id) }}">{{ _("Disable") }}</a>
+                    </li>
+                    {% endif %}
+                    {% if current_user.is_admin() or comment.user_id == current_user.id %}
+                    <li class="dropdown__item">
+                        <a href="{{ url_for('delete_comment', id=comment.id) }}">{{ _("Delete") }}</a>
+                    </li>
+                    {% endif %}
+                    <li class="dropdown__item">
+                        <a href="#">{{ _("Reply") }}</a>
+                    </li>
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+        {% endfor %}
+        {% if current_user.is_authenticated %}
+        <div class="comment comment--new">
+            <figure class="comment__avatar">
+                <img src="{{ current_user.email | gravatar }}"/>
+            </figure>
+            <form class="comment__form" method="POST" action="{{ url_for('comment_post', id=post.id) }}">
+                <textarea name="content" placeholder="{{ _('Your comment') }}" required></textarea>
+                <button class="button button--muted" type="reset">{{ _("Reset") }}</button>
+                <button class="button button--secondary" type="submit">{{ _("Send") }}</button>
+            </form>
+        </div>
+        {% else %}
+        <div class="comment comment--login">
+            <div>
+                {{ _("Login or register to comment") }}
+            </div>
+            <div>
+                <a class="button button--muted" href="{{ url_for('register') }}">{{ _("Register") }}</a>
+                <a class="button button--secondary" href="{{ url_for('login') }}">{{ _("Login") }}</a>
+            </a>
+        </div>
+        {% endif %}
+      </section>
+    </main>
+    {% include 'partials/sidebar.html' %}
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+<aside class="sidebar" role="complementary">
+    <h1 class="sidebar__title">
+      {{ _("Welcome") }}
+    </h1>
+    <p class="sidebar__members">
+        <strong>
+          {{ user_count }}
+          {% if user_count > 1 %}
+            {{ _("members") }}
+          {% else %}
+            {{ _("member") }}
+          {% endif %}
+        </strong>
+    </p>
+    <p class="sidebar__text">Ac ne quis a nobis hoc ita dici forte miretur, quod alia quaedam in hoc facultas sit ingeni, neque haec dicendi ratio aut disciplina.</p>
+    <a href="{{ url_for('new_post') }}" class="button button--secondary">{{ _("Create a post") }}</a>
+
+    <h2 class="sidebar__subtitle">{{ _("Our rules") }}</h2>
+    <ol class="sidebar__rules">
+      <li>{{ _("Don't be evil") }}</li>
+      <li>{{ _("No spam please") }}</li>
+      <li>{{ _("No hate speech") }}</li>
+      <li>{{ _("No nudes!") }}</li>
+      <li>{{ _("Don't forget the first rule") }}</li>
+    </ol>
+</aside>

@@ -1,0 +1,57 @@
+.button {
+  display: inline-block;
+  padding: .5rem;
+  border: 0;
+  border-radius: $border-radius;
+  text-decoration: none;
+  text-align: center;
+  transition: opacity 120ms cubic-bezier(0.37, 0, 0.63, 1);
+
+  &:hover,
+  &:focus {
+      cursor: pointer;
+      opacity: .8;
+  }
+
+  &:active {
+      opacity: .64;
+  }
+
+  * {
+    vertical-align: top;
+  }
+}
+
+.button--default {
+    background: $grey-600;
+    color: $white;
+}
+
+.button--primary {
+    background: $primary;
+    color: $primary-invert;
+}
+
+.button--secondary {
+    background: $secondary;
+    color: $secondary-invert;
+}
+
+.button--white {
+    background: $white;
+    color: $grey-800;
+}
+
+.button--muted {
+    background: $grey-200;
+    color: $grey-800;
+
+    .material-icons {
+      color: $grey-500;
+    }
+}
+
+.button--danger {
+    background: $red;
+    color: $white;
+}

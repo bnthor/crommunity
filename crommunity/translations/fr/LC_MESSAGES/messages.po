@@ -1,0 +1,699 @@
+# French translations for PROJECT.
+# Copyright (C) 2020 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2020-10-07 12:22+0200\n"
+"PO-Revision-Date: 2020-10-07 12:23+0200\n"
+"Last-Translator: \n"
+"Language: fr\n"
+"Language-Team: fr <LL@li.org>\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#: crommunity/__init__.py:24
+msgid "Please log in to access this page."
+msgstr "Veuillez vous connecter pour accéder à cette page."
+
+#: crommunity/_helpers.py:45 crommunity/_helpers.py:60
+msgid "You don't have access to that page"
+msgstr "Vous n’avez pas accès à cette page"
+
+#: crommunity/routes.py:151 crommunity/routes.py:800
+msgid "Email is invalid"
+msgstr "Email invalide"
+
+#: crommunity/routes.py:155 crommunity/routes.py:804
+msgid "Humans only!"
+msgstr "Humains seulement !"
+
+#: crommunity/routes.py:159
+msgid "Username is required"
+msgstr "Nom d’utilisateur requis"
+
+#: crommunity/routes.py:165 crommunity/routes.py:336
+msgid "Username is already taken"
+msgstr "Le nom d'utilisateur est déjà utilisé"
+
+#: crommunity/routes.py:171 crommunity/routes.py:346
+msgid "Email is already taken"
+msgstr "Cet email est déjà utilisé"
+
+#: crommunity/routes.py:175 crommunity/routes.py:228
+msgid "Password is required"
+msgstr "Mot de passe requis"
+
+#: crommunity/routes.py:179 crommunity/routes.py:365
+msgid "Passwords did not match"
+msgstr "Les mots de passe ne correspondent pas"
+
+#: crommunity/routes.py:185 crommunity/routes.py:306 crommunity/routes.py:361
+msgid ""
+"Password must contain an uppercase letter, a digit and at least 8 characters."
+msgstr ""
+"Le mot de passe doit contenir une majuscule, un chiffre et au moins 8 "
+"caractères."
+
+#: crommunity/routes.py:197
+msgid "Successfully Registered"
+msgstr "Inscription réussie"
+
+#: crommunity/routes.py:224
+msgid "Email is required"
+msgstr "Email requis"
+
+#: crommunity/routes.py:237
+msgid "User was not found"
+msgstr "Utilisateur introuvable"
+
+#: crommunity/routes.py:241 crommunity/routes.py:355
+msgid "Wrong password"
+msgstr "Mot de passe incorrect"
+
+#: crommunity/routes.py:245
+msgid "Your account has been suspended"
+msgstr "Votre compte a été suspendu"
+
+#: crommunity/routes.py:274
+msgid "Email doesn't exist"
+msgstr "Email introuvable"
+
+#: crommunity/routes.py:280
+msgid "Password reset"
+msgstr "Réinitialiser le mot de passe"
+
+#: crommunity/routes.py:297
+msgid "Link has expired"
+msgstr "Le lien a expiré"
+
+#: crommunity/routes.py:313
+msgid "Successfully updated password"
+msgstr "Mot de passe mis à jour avec succès"
+
+#: crommunity/routes.py:372
+msgid "Successfully updated your account"
+msgstr "Compte mis à jour avec succès"
+
+#: crommunity/routes.py:395
+msgid "Couldn't delete your account, please try again."
+msgstr "Nous n’avons pas pu supprimer votre compte, veuillez ré-essayer."
+
+#: crommunity/routes.py:475 crommunity/routes.py:524
+msgid "Title is required"
+msgstr "Titre requis"
+
+#: crommunity/routes.py:479 crommunity/routes.py:528
+msgid "Posts should contain a least a link or some content"
+msgstr "Une publication doit contenir un lien ou du contenu"
+
+#: crommunity/routes.py:487 crommunity/routes.py:538
+msgid "Invalid image format"
+msgstr "Format d’image invalide"
+
+#: crommunity/routes.py:502
+msgid "Post successfully created"
+msgstr "Article créé avec succès"
+
+#: crommunity/routes.py:520 crommunity/routes.py:575 crommunity/routes.py:588
+msgid "You're not the author of this post!"
+msgstr "Vous n’êtes pas l’auteur de cet article !"
+
+#: crommunity/routes.py:553
+msgid "Post successfully updated"
+msgstr "Article mis à jour"
+
+#: crommunity/routes.py:560
+msgid "This post is disabled"
+msgstr "Cet article est désactivé"
+
+#: crommunity/routes.py:605
+msgid "Post successfully deleted"
+msgstr "Article supprimé"
+
+#: crommunity/routes.py:654
+msgid "Post was reported"
+msgstr "L’article a été signalé"
+
+#: crommunity/routes.py:679
+msgid "This account is suspended"
+msgstr "Ce compte est suspendu"
+
+#: crommunity/routes.py:699
+msgid "Can't disable an administrator"
+msgstr "Vous ne pouvez pas désactiver un administrateur"
+
+#: crommunity/routes.py:737
+msgid "Your comment cannot be empty!"
+msgstr "Votre commentaire ne peut pas être vide !"
+
+#: crommunity/routes.py:808
+msgid "Your message should have an object"
+msgstr "Votre message doit avoir un objet"
+
+#: crommunity/routes.py:812
+msgid "Your message should'nt be empty"
+msgstr "Votre message ne doit pas être vide"
+
+#: crommunity/routes.py:816
+msgid "Contact"
+msgstr "Contact"
+
+#: crommunity/routes.py:823
+msgid "Thanks for reaching out! We'll reply as soon as possible"
+msgstr "Merci de nous avoir contacté. Nous vous répondrons le plus vite possible"
+
+#: crommunity/templates/_errors.html:6
+msgid "Error"
+msgstr "Erreur"
+
+#: crommunity/templates/_errors.html:9
+msgid "Bad request"
+msgstr "La demande a une syntaxe incorrecte"
+
+#: crommunity/templates/_errors.html:11
+msgid "Unauthorized"
+msgstr "Non autorisé"
+
+#: crommunity/templates/_errors.html:13
+msgid "Forbidden"
+msgstr "Interdit"
+
+#: crommunity/templates/_errors.html:15
+msgid "Page not found"
+msgstr "Page non trouvée"
+
+#: crommunity/templates/_errors.html:17
+msgid "Internal server error"
+msgstr "Erreur interne du serveur"
+
+#: crommunity/templates/_errors.html:20
+msgid "Back to homepage"
+msgstr "Retour à l'accueil"
+
+#: crommunity/templates/about.html:25 crommunity/templates/partials/footer.html:6
+msgid "Privacy policy"
+msgstr "Politique de confidentialité"
+
+#: crommunity/templates/account.html:9
+msgid "Your Gravatar"
+msgstr "Votre Gravatar"
+
+#: crommunity/templates/account.html:12
+#: crommunity/templates/partials/sidebar.html:3
+msgid "Welcome"
+msgstr "Bienvenue"
+
+#: crommunity/templates/account.html:15
+msgid "Change your nickname:"
+msgstr "Changer votre pseudonyme :"
+
+#: crommunity/templates/account.html:16
+msgid "Nickname"
+msgstr "Pseudonyme"
+
+#: crommunity/templates/account.html:19
+msgid "Change your email address:"
+msgstr "Changer votre adresse email :"
+
+#: crommunity/templates/account.html:20 crommunity/templates/admin/users.html:10
+#: crommunity/templates/forgotten_password.html:10
+#: crommunity/templates/login.html:13 crommunity/templates/register.html:11
+msgid "Email address"
+msgstr "Adresse email"
+
+#: crommunity/templates/account.html:23
+msgid "Update your password:"
+msgstr "Changer votre mot de passe :"
+
+#: crommunity/templates/account.html:24
+msgid "Current password"
+msgstr "Mot de passe actuel"
+
+#: crommunity/templates/account.html:25 crommunity/templates/new_password.html:7
+msgid "New password"
+msgstr "Nouveau mot de passe"
+
+#: crommunity/templates/account.html:26 crommunity/templates/new_password.html:8
+#: crommunity/templates/register.html:22
+msgid "Confirm password"
+msgstr "Confirmez le mot de passe"
+
+#: crommunity/templates/account.html:28 crommunity/templates/edit_post.html:26
+msgid "Save"
+msgstr "Sauvegarder"
+
+#: crommunity/templates/account.html:31
+msgid "Danger"
+msgstr "Danger"
+
+#: crommunity/templates/account.html:32
+msgid ""
+"You cannot undo this action, your account and all your posts will be removed."
+msgstr ""
+"Vous ne pourrez pas annuler cette action, votre compte et tous vos articles "
+"seront supprimés."
+
+#: crommunity/templates/account.html:34
+msgid "Delete my account"
+msgstr "Supprimer mon compte"
+
+#: crommunity/templates/account.html:40
+msgid "My posts"
+msgstr "Mes articles"
+
+#: crommunity/templates/account.html:43
+#: crommunity/templates/admin/reported_posts.html:8
+#: crommunity/templates/edit_post.html:9 crommunity/templates/new_post.html:9
+msgid "Post title"
+msgstr "Titre de l’article"
+
+#: crommunity/templates/account.html:44
+#: crommunity/templates/admin/reported_posts.html:9
+#: crommunity/templates/partials/post.html:43
+msgid "Votes"
+msgstr "Votes"
+
+#: crommunity/templates/account.html:45 crommunity/templates/partials/post.html:55
+#: crommunity/templates/view_post.html:13
+msgid "Comments"
+msgstr "Commentaires"
+
+#: crommunity/templates/account.html:46
+#: crommunity/templates/admin/reported_posts.html:10
+msgid "Post link"
+msgstr "URL de l’article"
+
+#: crommunity/templates/account.html:47
+#: crommunity/templates/admin/reported_comments.html:10
+#: crommunity/templates/admin/reported_posts.html:11
+#: crommunity/templates/admin/users.html:13
+msgid "Actions"
+msgstr "Actions"
+
+#: crommunity/templates/account.html:57
+#: crommunity/templates/admin/reported_comments.html:22
+#: crommunity/templates/admin/reported_posts.html:24
+#: crommunity/templates/admin/users.html:51
+#: crommunity/templates/delete_post.html:11
+#: crommunity/templates/partials/post.html:107
+#: crommunity/templates/view_post.html:40
+msgid "Delete"
+msgstr "Supprimer"
+
+#: crommunity/templates/contact_us.html:6
+#: crommunity/templates/partials/footer.html:5
+msgid "Contact us"
+msgstr "Nous contacter"
+
+#: crommunity/templates/contact_us.html:9
+msgid "Your email address"
+msgstr "Votre adresse email"
+
+#: crommunity/templates/contact_us.html:10
+msgid "Object"
+msgstr "Objet"
+
+#: crommunity/templates/contact_us.html:11 crommunity/templates/edit_post.html:25
+#: crommunity/templates/new_post.html:19
+msgid "Text"
+msgstr "Texte"
+
+#: crommunity/templates/contact_us.html:12 crommunity/templates/view_post.html:59
+msgid "Send"
+msgstr "Envoyer"
+
+#: crommunity/templates/contact_us.html:15 crommunity/templates/register.html:27
+msgid "company"
+msgstr "société"
+
+#: crommunity/templates/delete_post.html:6
+msgid "Caution!"
+msgstr "Attention !"
+
+#: crommunity/templates/delete_post.html:7
+msgid "This post will be permanently removed. Are you sure you want to delete it?"
+msgstr ""
+"Cet article sera définitivement supprimé. Êtes-vous sûr de vouloir continuer ?"
+
+#: crommunity/templates/delete_post.html:10
+msgid "Cancel"
+msgstr "Annuler"
+
+#: crommunity/templates/edit_post.html:6
+msgid "Edit post"
+msgstr "Modifier l’article"
+
+#: crommunity/templates/edit_post.html:13 crommunity/templates/edit_post.html:17
+#: crommunity/templates/new_post.html:12
+msgid "Post cover image"
+msgstr "Image de couverture"
+
+#: crommunity/templates/edit_post.html:19 crommunity/templates/new_post.html:13
+#: crommunity/templates/view_post.html:58
+msgid "Reset"
+msgstr "Réinitialiser"
+
+#: crommunity/templates/edit_post.html:22 crommunity/templates/new_post.html:16
+msgid "Choose a file..."
+msgstr "Choisir un fichier…"
+
+#: crommunity/templates/edit_post.html:24 crommunity/templates/new_post.html:18
+msgid "Link"
+msgstr "Lien"
+
+#: crommunity/templates/edit_post.html:24 crommunity/templates/edit_post.html:25
+#: crommunity/templates/new_post.html:18 crommunity/templates/new_post.html:19
+msgid "optional"
+msgstr "facultatif"
+
+#: crommunity/templates/forgotten_password.html:6
+#: crommunity/templates/login.html:23
+msgid "Forgotten password"
+msgstr "Mot de passe oublié"
+
+#: crommunity/templates/forgotten_password.html:7
+msgid "Enter your account email, we'll send you a link to reset your password."
+msgstr ""
+"Entrez votre e-mail de compte, nous vous enverrons un lien pour réinitialiser "
+"votre mot de passe."
+
+#: crommunity/templates/forgotten_password.html:11
+#: crommunity/templates/new_password.html:4
+#: crommunity/templates/new_password.html:9
+msgid "Reset password"
+msgstr "Réinitialisation du mot de passe"
+
+#: crommunity/templates/index.html:5
+msgid "Recent"
+msgstr "Récent"
+
+#: crommunity/templates/index.html:6
+msgid "Top"
+msgstr "Top"
+
+#: crommunity/templates/index.html:7
+msgid "Random"
+msgstr "Au hasard"
+
+#: crommunity/templates/index.html:14
+msgid "No post yet"
+msgstr "Il n’y a pas encore d’articles"
+
+#: crommunity/templates/index.html:25
+msgid "New random posts"
+msgstr "Nouveaux articles au hasard"
+
+#: crommunity/templates/index.html:30 crommunity/templates/search.html:18
+msgid "Newer posts"
+msgstr "Articles plus récents"
+
+#: crommunity/templates/index.html:35 crommunity/templates/search.html:23
+msgid "Older posts"
+msgstr "Articles plus anciens"
+
+#: crommunity/templates/link_sent.html:6
+msgid "Check your emails"
+msgstr "Consultez vos emails"
+
+#: crommunity/templates/link_sent.html:7
+msgid "We sent you a verification email."
+msgstr "Nous vous avons envoyé un email de vérification."
+
+#: crommunity/templates/link_sent.html:7
+msgid "Click the link to reset your password."
+msgstr "Cliquez sur le lien pour réinitialiser votre mot de passe."
+
+#: crommunity/templates/login.html:6
+msgid "Welcome back!"
+msgstr "Bonjour !"
+
+#: crommunity/templates/login.html:8
+msgid "Don't have an account?"
+msgstr "Vous n'avez pas de compte ?"
+
+#: crommunity/templates/login.html:9 crommunity/templates/partials/header.html:39
+#: crommunity/templates/register.html:25 crommunity/templates/view_post.html:68
+msgid "Register"
+msgstr "Inscription"
+
+#: crommunity/templates/login.html:14
+msgid "Password"
+msgstr "Mot de passe"
+
+#: crommunity/templates/login.html:15 crommunity/templates/partials/header.html:38
+#: crommunity/templates/register.html:7 crommunity/templates/view_post.html:69
+msgid "Login"
+msgstr "Connexion"
+
+#: crommunity/templates/login.html:21
+msgid "Remember me"
+msgstr "Se souvenir de moi"
+
+#: crommunity/templates/new_post.html:6
+#: crommunity/templates/partials/header.html:27
+#: crommunity/templates/partials/sidebar.html:16
+msgid "Create a post"
+msgstr "Créer un article"
+
+#: crommunity/templates/new_post.html:20
+msgid "Post"
+msgstr "Article"
+
+#: crommunity/templates/register.html:6
+msgid "Create an account"
+msgstr "Créer un compte"
+
+#: crommunity/templates/register.html:7
+msgid "Already registered?"
+msgstr "Déjà inscrit ?"
+
+#: crommunity/templates/register.html:10
+msgid "Pick a username"
+msgstr "Choisissez un nom d’utilisateur"
+
+#: crommunity/templates/register.html:16
+msgid "Choose a password"
+msgstr "Choisissez un mot de passe"
+
+#: crommunity/templates/search.html:7
+msgid "No results"
+msgstr "Pas de résultats"
+
+#: crommunity/templates/user.html:12
+msgid "Registered on:"
+msgstr "Inscrit le :"
+
+#: crommunity/templates/user.html:17
+#, python-format
+msgid "%(name)s's posts"
+msgstr "Articles de %(name)s"
+
+#: crommunity/templates/admin/reported_comments.html:8
+#: crommunity/templates/partials/post.html:57
+#: crommunity/templates/view_post.html:15
+msgid "Comment"
+msgstr "Commentaire"
+
+#: crommunity/templates/view_post.html:29
+msgid "More"
+msgstr "Plus"
+
+#: crommunity/templates/admin/users.html:46 crommunity/templates/view_post.html:35
+msgid "Disable"
+msgstr "Désactiver"
+
+#: crommunity/templates/view_post.html:44
+msgid "Reply"
+msgstr "Répondre"
+
+#: crommunity/templates/view_post.html:57
+msgid "Your comment"
+msgstr "Votre commentaire"
+
+#: crommunity/templates/view_post.html:65
+msgid "Login or register to comment"
+msgstr "Connectez ou inscrivez vous pour commenter"
+
+#: crommunity/templates/admin/dashboard.html:5
+#: crommunity/templates/admin/reported_comments.html:4
+#: crommunity/templates/admin/reported_posts.html:4
+#: crommunity/templates/admin/users.html:4
+msgid "Admin"
+msgstr "Admin"
+
+#: crommunity/templates/admin/dashboard.html:10
+#: crommunity/templates/admin/users.html:4
+msgid "Members"
+msgstr "Membres"
+
+#: crommunity/templates/admin/dashboard.html:16
+#: crommunity/templates/admin/reported_posts.html:4
+msgid "Reported posts"
+msgstr "Articles signalés"
+
+#: crommunity/templates/admin/dashboard.html:22
+#: crommunity/templates/admin/reported_comments.html:4
+msgid "Reported comments"
+msgstr "Commentaires signalés"
+
+#: crommunity/templates/admin/dashboard.html:28
+msgid "Reported messages"
+msgstr "Messages signalés"
+
+#: crommunity/templates/admin/reported_comments.html:9
+msgid "Parent post"
+msgstr "Article parent"
+
+#: crommunity/templates/admin/reported_comments.html:18
+#: crommunity/templates/admin/reported_posts.html:20
+#: crommunity/templates/admin/users.html:42
+msgid "Enable"
+msgstr "Activer"
+
+#: crommunity/templates/admin/users.html:9
+msgid "Username"
+msgstr "Pseudonyme"
+
+#: crommunity/templates/admin/users.html:11
+msgid "Role"
+msgstr "Rôle"
+
+#: crommunity/templates/admin/users.html:12
+msgid "Registration date"
+msgstr "Date d’inscription"
+
+#: crommunity/templates/admin/users.html:60
+msgid "Total"
+msgstr "Total"
+
+#: crommunity/templates/admin/users.html:61
+msgid "users"
+msgstr "utilisateurs"
+
+#: crommunity/templates/emails/contact_email.html:1
+msgid "New message"
+msgstr "Nouveau message"
+
+#: crommunity/templates/emails/reset_email.html:2
+msgid "To reset your password"
+msgstr "Pour réinitialiser votre mot de passe"
+
+#: crommunity/templates/emails/reset_email.html:6
+msgid "click here"
+msgstr "cliquez ici"
+
+#: crommunity/templates/partials/footer.html:7
+msgid "About us"
+msgstr "À propos de nous"
+
+#: crommunity/templates/partials/header.html:4
+msgid "Menu"
+msgstr "Menu"
+
+#: crommunity/templates/partials/header.html:10
+msgid "Search posts"
+msgstr "Chercher un article"
+
+#: crommunity/templates/partials/header.html:11
+msgid "Go"
+msgstr "Go"
+
+#: crommunity/templates/partials/header.html:18
+msgid "Hello"
+msgstr "Bonjour"
+
+#: crommunity/templates/partials/header.html:23
+msgid "Administration"
+msgstr "Administration"
+
+#: crommunity/templates/partials/header.html:30
+msgid "My account"
+msgstr "Mon compte"
+
+#: crommunity/templates/partials/header.html:33
+msgid "Logout"
+msgstr "Déconnexion"
+
+#: crommunity/templates/partials/post.html:45
+msgid "Vote"
+msgstr "Vote"
+
+#: crommunity/templates/partials/post.html:66
+msgid "Share"
+msgstr "Partager"
+
+#: crommunity/templates/partials/post.html:101
+msgid "Edit"
+msgstr "Modifier"
+
+#: crommunity/templates/partials/post.html:113
+msgid "Report"
+msgstr "Signaler"
+
+#: crommunity/templates/partials/privacy_consent.html:3
+msgid "We use cookies to keep a registered user logged in between visits."
+msgstr ""
+"Nous utilisons des cookies pour conserver la connexion d’un utilisateur entre "
+"ses visites."
+
+#: crommunity/templates/partials/privacy_consent.html:4
+msgid "To learn more, read our privacy policy."
+msgstr "Pour en savoir plus, lisez notre politique de confidentialité."
+
+#: crommunity/templates/partials/privacy_consent.html:6
+msgid "By choosing I Accept, you consent to our use of cookies."
+msgstr ""
+"En cliquant sur « J’accepte », vous consentez à notre utilisation des cookies."
+
+#: crommunity/templates/partials/privacy_consent.html:9
+msgid "I accept"
+msgstr "J’accepte"
+
+#: crommunity/templates/partials/sidebar.html:9
+msgid "members"
+msgstr "membres"
+
+#: crommunity/templates/partials/sidebar.html:11
+msgid "member"
+msgstr "membre"
+
+#: crommunity/templates/partials/sidebar.html:18
+msgid "Our rules"
+msgstr "Nos règles"
+
+#: crommunity/templates/partials/sidebar.html:20
+msgid "Don't be evil"
+msgstr "Soyez sympa"
+
+#: crommunity/templates/partials/sidebar.html:21
+msgid "No spam please"
+msgstr "Pas de spam"
+
+#: crommunity/templates/partials/sidebar.html:22
+msgid "No hate speech"
+msgstr "Pas de discours haineux"
+
+#: crommunity/templates/partials/sidebar.html:23
+msgid "No nudes!"
+msgstr "Pas de nus !"
+
+#: crommunity/templates/partials/sidebar.html:24
+msgid "Don't forget the first rule"
+msgstr "N’oubliez pas la première règle"
+
+#~ msgid "Already have an account?"
+#~ msgstr "Vous avez déjà un compte ?"
+
+#~ msgid "Upvotes"
+#~ msgstr "Votes"
+
+#~ msgid "Legal notice"
+#~ msgstr "Mentions légales"

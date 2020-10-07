@@ -1,0 +1,203 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    height: 3rem;
+    background-color: $primary;
+    color: $primary-invert;
+
+    a {
+        color: $primary-invert;
+        text-decoration: none;
+    }
+
+    .dropdown__title {
+        color: $primary-invert;
+    }
+
+    .flex {
+        height: 100%;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.logo {
+    img {
+        display: block;
+        width: 140px;
+    }
+}
+
+.header__menuToggle {
+    display: none;
+    align-items: center;
+
+    .icon--active { display: none; }
+
+    &.is-active {
+        outline: none;
+
+        .icon--active { display: block; }
+        .icon--inactive { display: none; }
+    }
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    font-size: .88rem;
+
+    a {
+        display: inline-block;
+        margin-left: .5rem;
+    }
+}
+
+.header__search {
+    position: relative;
+    display: inline-block;
+    margin: 0 1rem 0;
+
+    input {
+        padding: .25rem 2rem .25rem .5rem;
+        margin: 0;
+        background: lighten($primary, 12%);
+        border: 0;
+        color: $primary-invert;
+
+        &:focus {
+            box-shadow: 0 0 0 2px rgba($primary-invert, .48);
+        }
+
+        &::placeholder {
+          color: rgba($primary-invert, .56);
+        }
+
+        &:-webkit-autofill {
+            &, &:hover, &:focus {
+                -webkit-box-shadow: 0 0 0 30px lighten($primary, 12%) inset !important;
+                -webkit-text-fill-color: $primary-invert !important;
+            }
+        }
+    }
+
+    button {
+        width: 2rem;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        appearance: none;
+        background: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        border-radius: 0 $border-radius $border-radius 0;
+
+        &:hover {
+            cursor: pointer;
+            background: lighten($primary, 16%);
+        }
+
+        .material-icons {
+            font-size: 1.25rem;
+            color: $primary-invert;
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    .header .flex {
+        display: flex;
+    }
+    .header__menuToggle {
+        display: flex;
+    }
+    .header__nav {
+        position: absolute;
+        top: 3rem;
+        left: 0;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: strech;
+        background: darken($primary, 8%);
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-.5rem);
+        transition: all 160ms cubic-bezier(0.45, 0, 0.55, 1);
+
+        &.is-active {
+            opacity: 1;
+            pointer-events: initial;
+            transform: translateY(0);
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            font-size: 1.25rem;
+            padding: 1rem;
+            border-bottom: 1px solid $primary;
+        }
+
+        .dropdown {
+            order: 0;
+            width: 100%;
+
+            &:hover,
+            &:focus-within {
+                .dropdown__menu {
+                    transform: none;
+                }
+            }
+        }
+
+        .dropdown__title {
+            display: none;
+        }
+
+        .dropdown__menu {
+            position: static;
+            opacity: 1;
+            visibility: visible;
+            background: none;
+            transform: none;
+            box-shadow: none;
+
+            .dropdown__item {
+                border: none;
+
+                a {
+                    opacity: 1;
+                    color: $primary-invert;
+
+                    &:hover {
+                        color: $primary-invert;
+                    }
+                }
+            }
+        }
+    }
+
+    .header__search {
+        order: 1;
+        width: 100%;
+        margin: 0;
+
+        input {
+            width: 100%;
+            padding: .5rem 1rem;
+            background: darken($primary, 12%);
+            text-align: center;
+            font-size: 1.25rem;
+            border-radius: 0;
+        }
+
+        button {
+            width: 3rem;
+            justify-content: center;
+        }
+    }
+}

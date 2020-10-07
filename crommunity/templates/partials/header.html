@@ -1,0 +1,43 @@
+<header class="header" role="banner">
+    <div class="container flex">
+        {% include 'partials/logo.html' %}
+        <div class="header__menuToggle" aria-label="{{ _("Menu") }}">
+            <i class="icon--inactive material-icons" aria-hidden>menu</i>
+            <i class="icon--active material-icons" aria-hidden>close</i>
+        </div>
+        <nav class="header__nav">
+            <form class="header__search" method="POST" action="{{ url_for('search') }}">
+                <input type="text" name="query" placeholder="{{ _('Search posts') }}" required/>
+                <button type="submit" aria-label="{{ _('Go') }}">
+                    <i class="material-icons" aria-hidden>search</i>
+                </button>
+            </form>
+            {% if current_user.is_authenticated %}
+            <div class="dropdown">
+                <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="user-dropdown">
+                    {{ _("Hello") }} {{ current_user.username }}
+                </button>
+                <ul class="dropdown__menu" id="user-dropdown">
+                    {% if current_user.is_admin() or current_user.is_mod() %}
+                    <li class="dropdown__item">
+                        <a href="{{ url_for('admin') }}">{{ _("Administration") }}</a>
+                    </li>
+                    {% endif %}
+                    <li class="dropdown__item">
+                        <a href="{{ url_for('new_post') }}">{{ _("Create a post") }}</a>
+                    </li>
+                    <li class="dropdown__item">
+                        <a href="{{ url_for('account') }}">{{ _("My account") }}</a>
+                    </li>
+                    <li class="dropdown__item">
+                        <a href="{{ url_for('logout') }}">{{ _("Logout") }}</a>
+                    </li>
+                </ul>
+            </div>
+            {% else %}
+            <a href="{{ url_for('login') }}">{{ _("Login") }}</a>
+            <a href="{{ url_for('register') }}">{{ _("Register") }}</a>
+            {% endif %}
+        </nav>
+    </div>
+</header>

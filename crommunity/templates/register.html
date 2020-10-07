@@ -1,0 +1,31 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="center auth">
+  <div class="center__item">
+    <h1 class="center__title">{{ _("Create an account") }}</h1>
+    <p class="center__subtitle">{{ _("Already registered?") }} <a href="{{ url_for('login') }}">{{ _("Login") }}</a></p>
+    <form class="center__form" method="POST" action="{{ url_for('register') }}">
+      <fieldset class="center__fields">
+        <input type="text" name="username" placeholder="{{ _('Pick a username') }}" required />
+        <input type="email" name="email" placeholder="{{ _('Email address') }}" required />
+        <input
+          type="password"
+          name="password"
+          minlength="8"
+          placeholder="{{ _('Choose a password') }}"
+          required
+          />
+        <input
+          type="password"
+          name="confirmation"
+          placeholder="{{ _('Confirm password') }}"
+          required
+          />
+        <button class="button button--secondary" type="submit">{{ _("Register") }}</button>
+      </fieldset>
+      <input type="text" name="trp" value="" placeholder="{{ _('company') }}" class="register__trp"/>
+    </form>
+  </div>
+</div>
+{% endblock %}

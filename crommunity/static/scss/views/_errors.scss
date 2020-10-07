@@ -1,0 +1,17 @@
+.error {
+    text-align: center;
+}
+
+.error__title {
+    margin-bottom: 0;
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.error__subtitle {
+    margin-top: 0;
+    margin-bottom: 2rem;
+    color: $grey-600;
+    font-size: 1.5rem;
+    line-height: 1.2;
+}

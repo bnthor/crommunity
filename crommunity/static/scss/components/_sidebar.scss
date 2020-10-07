@@ -1,0 +1,19 @@
+.sidebar__text {
+  color: $grey-600;
+}
+
+.sidebar .button {
+  display: block;
+  margin: 1rem 0;
+}
+
+.sidebar__subtitle {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+}
+
+ol.sidebar__rules {
+  color: $grey-600;
+  list-style-type: decimal;
+  margin-left: 1.125rem;
+}

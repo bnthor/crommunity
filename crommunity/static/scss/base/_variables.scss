@@ -1,0 +1,35 @@
+$blue: #157FFB;
+$indigo: #4568E8;
+$purple: #8736DD;
+$pink: #E44C81;
+$red: #EE4044;
+$orange: #FE923A;
+$yellow: #FED34C;
+$green: #57CE6B;
+$teal: #42D8AA;
+$cyan: #45CADA;
+
+$white: #FFFFFF;
+$black: #000000;
+$grey-100: #F8F9FA;
+$grey-200: #E9ECEF;
+$grey-300: #DFE2E6;
+$grey-400: #CFD4DA;
+$grey-500: #ADB5BD;
+$grey-600: #868E96;
+$grey-700: #495057;
+$grey-800: #343A40;
+$grey-900: #222529;
+
+// Theme
+$primary: $purple;
+$primary-invert: $white;
+$secondary: $blue;
+$secondary-invert: $white;
+
+// Scaffolding
+$link-color: $secondary;
+$text-color: $grey-900;
+$body-background: $white;
+$border-color: $grey-400;
+$border-radius: .25rem;

@@ -1,0 +1,31 @@
+{% extends "_layout.html" %}
+{% block content %}
+<div class="container admin admin--comments">
+    <h1><a href="{{ url_for('admin') }}">{{ _('Admin') }}</a> / {{ _("Reported comments") }}</h1>
+    <section>
+        <table class="actable">
+            <tr>
+                <th>{{ _('Comment') }}</th>
+                <th>{{ _('Parent post') }}</th>
+                <th>{{ _('Actions') }}</th>
+            </tr>
+            {% for comment in reports %}
+            <tr>
+                <td>{{ comment.content }}</td>
+                <td><a href="{{ url_for('post', id=comment.post_id) }}">{{ url_for('post', id=comment.post_id) }}</a></td>
+                <td>
+                    <a href="{{ url_for('enable_comment', id=comment.id) }}" class="button button--muted">
+                        {{ _('Enable') }}
+                    </a>
+                    {% if current_user.is_admin() %}
+                    <a href="{{ url_for('delete_comment', id=comment.id) }}" class="button button--danger">
+                        {{ _('Delete') }}
+                    </a>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+</div>
+{% endblock %}

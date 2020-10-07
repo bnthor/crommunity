@@ -1,0 +1,28 @@
+
+{% extends "_layout.html" %}
+{% block content %}
+<div class="container legal">
+    <h1>About us</h1>
+
+    <ul>
+        <li>
+            <strong>Owner</strong>: {{ owner.name }} – {{ owner.address }}
+        </li>
+        <li>
+            <strong>Publisher</strong>: {{ owner.name }} – {{ owner.email }}
+        </li>
+        <li>
+            <strong>Webmaster</strong>: {{ owner.name }} – {{ owner.email }}
+        </li>
+        <li>
+            <strong>Hoster</strong>: {{ host.name }} – {{ host.address }}
+        </li>
+        <li>
+            <strong>Data protection officer</strong>: {{ owner.name }} – {{ owner.email }}
+        </li>
+    </ul>
+
+    See <a href="{{ url_for('privacy_policy') }}">{{ _("Privacy policy") }}</a> to learn more about our use of cookies and privacy policy.
+
+</div>
+{% endblock %}

@@ -1,0 +1,1 @@
+from crommunity import app, cli

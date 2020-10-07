@@ -1,0 +1,25 @@
+.message {
+    border-radius: $border-radius;
+    padding: 1rem;
+
+    .button {
+        margin-top: 1rem;
+        display: block;
+    }
+}
+
+.message--error,
+.message--danger {
+    background: lighten($red, 32%);
+    color: $red;
+}
+
+.message--success {
+    background: lighten($green, 32%);
+    color: $green;
+}
+
+.message__title {
+    margin: 0 0 .5rem;
+    font-size: 1.25rem;
+}

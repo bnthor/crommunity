@@ -1,0 +1,29 @@
+{% extends "_layout.html" %}
+{% block content %}
+<div class="flex container">
+    <main class="main posts">
+        {% if not posts %}
+            <article class="post post--none">
+                <h2 class="post__title">{{ _("No results") }}</h2>
+            </article>
+        {% else %}
+            {% for post in posts %}
+                {% include 'partials/post.html' %}
+            {% endfor %}
+        {% endif %}
+
+        <div class="pagination">
+            {% if prev_url %}
+            <a href="{{ prev_url }}" class="button button--muted">
+                <i class="material-icons" aria-hidden>arrow_back</i> {{ _("Newer posts") }}
+            </a>
+            {% endif %}
+            {% if next_url %}
+            <a href="{{ next_url }}" class="button button--muted">
+                {{ _("Older posts") }} <i class="material-icons" aria-hidden>arrow_forward</i>
+            </a>
+            {% endif %}
+        </div>
+    </main>
+</div>
+{% endblock %}

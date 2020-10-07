@@ -1,0 +1,8 @@
+<p>
+  {{ _("To reset your password") }}
+  <a
+    href="{{ url_for('new_password', user=user, token=token, _external=True) }}"
+  >
+    {{ _("click here") }} </a
+  >.
+</p>

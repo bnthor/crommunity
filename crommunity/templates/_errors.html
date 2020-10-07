@@ -1,0 +1,23 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="center error">
+  <div class="center__item">
+    <h1 class="error__title">{{ _("Error") }} {{ code }}</h1>
+    <p class="error__subtitle">
+      {% if code == 400 %}
+      {{ _("Bad request") }}
+      {% elif code == 401 %}
+      {{ _("Unauthorized") }}
+      {% elif code == 403 %}
+      {{ _("Forbidden") }}
+      {% elif code == 404 %}
+      {{ _("Page not found") }}
+      {% elif code == 500 %}
+      {{ _("Internal server error") }}
+      {% endif %}
+    </p>
+    <a href="{{ url_for('index') }}" class="button button--secondary">{{ _("Back to homepage") }}</a>
+  </div>
+</div>
+{% endblock %}

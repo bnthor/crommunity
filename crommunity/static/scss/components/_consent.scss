@@ -1,0 +1,36 @@
+.consent {
+    position: fixed;
+    width: 16rem;
+    max-width: 100%;
+    max-width: calc(100% - 2rem);
+    bottom: 1rem;
+    left: 1rem;
+    background: $grey-200;
+    padding: 1rem 1.5rem;
+    font-size: .88rem;
+    border-radius: $border-radius;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(1rem);
+    transition: all 160ms cubic-bezier(0.11, 0, 0.5, 0);
+
+    &.is-visible {
+        opacity: 1;
+        pointer-events: initial;
+        transform: translateY(0);
+    }
+}
+
+.consent__accept {
+    margin-top: 1rem;
+    padding: .5rem 1.5rem;
+}
+
+
+@media (max-width: 640px) {
+    .consent {
+        max-width: 100%;
+        bottom: 0;
+        left: 0;
+    }
+}

@@ -1,0 +1,119 @@
+<article class="post {% if post_style == 'full'%}post--full{% endif %}">
+    {% if post.picture %}
+    <figure class="post__picture">
+        <img src="{{ url_for('upload', filename=post.picture) }}" />
+    </figure>
+    {% endif %}
+    <small class="post__meta">
+        <a href="{{ url_for('user_view', id=post.user_id) }}">{{ post.author.username }}</a> - {{ post.created|date }}
+    </small>
+    <h2 class="post__title">
+        {% if post.link %}
+        <a class="post__link" href="{{ post.link }}" target="_blank">
+            {{ post.title }} <i class="material-icons" aria-hidden>launch</i>
+            {% if post_style == 'full' %}
+            <small>{{ post.link }}</small>
+            {% endif %}
+        </a>
+        {% elif post_style != 'full' and post.link %}
+        <a class="post__link" href="{{ url_for('post', id=post.id) }}">
+            {{ post.title }}
+        </a>
+        {% else %}
+        {{ post.title }}
+        {% endif %}
+    </h2>
+    {% if post.excerpt and post_style != 'full' %}
+    <div class="post__excerpt">
+        <a class="post__link" href="{{ url_for('post', id=post.id) }}">
+            {{ post.excerpt }}
+        </a>
+    </div>
+    {% elif post.content and post_style == 'full' %}
+    <div class="post__content">
+        {{ post.content|markdown }}
+    </div>
+    {% endif %}
+    <div class="post__actions">
+        <a href="{{ url_for('upvote_post', id=post.id) }}" class="post__votes">
+            <i class="material-icons" aria-hidden>thumb_up</i>
+            <span class="hidden-under-desktop">
+                {{ post.vote_count|int }}
+                {% if post.vote_count|int > 1 %}
+                {{ _("Votes") }}
+                {% else %}
+                {{ _("Vote") }}
+                {% endif %}
+            </span>
+        </a>
+        {% if post_style != 'full' %}
+        <a href="{{ url_for('post', id=post.id) }}#comments" class="post__comments">
+            <i class="material-icons" aria-hidden>chat</i>
+            <span class="hidden-under-desktop">
+                {{ post.comment_count|int }}
+                {% if post.comment_count|int > 1 %}
+                {{ _("Comments") }}
+                {% else %}
+                {{ _("Comment") }}
+                {% endif %}
+            </span>
+        </a>
+        {% endif %}
+        <div href="#" class="post__share">
+            <div class="dropdown">
+                <button type="button" class="dropdown__title" aria-expanded="false" aria-controls="share-dropdown-{{ post.id }}">
+                    <i class="material-icons" aria-hidden>share</i>
+                    <span class="hidden-under-desktop">{{ _("Share") }}</span>
+                </button>
+                <ul class="dropdown__menu" id="share-dropdown-{{ post.id }}">
+                    <li class="dropdown__item">
+                        <a href="https://www.facebook.com/sharer/sharer.php?u={{ url_for('post', id=post.id, _external=True) }}&quote={{ post.title }}" target="_blank">
+                            <img src="{{ url_for('static', filename='img/social/facebook.svg') }}"/>
+                            Facebook
+                        </a>
+                    </li>
+                    <li class="dropdown__item">
+                        <a href="https://twitter.com/intent/tweet?source={{ url_for('post', id=post.id, _external=True) }}&text={{ post.title }}:%20{{ url_for('post', id=post.id, _external=True) }}" target="_blank">
+                            <img src="{{ url_for('static', filename='img/social/twitter.svg') }}"/>
+                            Twitter
+                        </a>
+                    </li>
+                    <li class="dropdown__item">
+                        <a href="http://www.reddit.com/submit?url={{ url_for('post', id=post.id, _external=True) }}&title={{ post.title }}" target="_blank">
+                            <img src="{{ url_for('static', filename='img/social/reddit.svg') }}"/>
+                            Reddit
+                        </a>
+                    </li>
+                    <li class="dropdown__item">
+                        <a href="mailto:?subject={{ post.title }}&body={% if post.excerpt%}{{ post.excerpt }}:{% endif %}%20{{ url_for('post', id=post.id, _external=True) }}" target="_blank">
+                            <img src="{{ url_for('static', filename='img/social/email.svg') }}" alt=""/>
+                            Email
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        {% if current_user.is_authenticated %}
+        <div class="post__dangerous">
+            {% if current_user.id == post.user_id %}
+            <a href="{{ url_for('edit_post', id=post.id) }}" class="post__update">
+                <i class="material-icons" aria-hidden>create</i>
+                <span class="hidden-under-desktop">{{ _("Edit") }}</span>
+            </a>
+            {% endif %}
+            {% if current_user.id == post.user_id or current_user.is_admin() %}
+            <a href="{{ url_for('delete_post', id=post.id) }}" class="post__delete">
+                <i class="material-icons" aria-hidden>delete_forever</i>
+                <span class="hidden-under-desktop">{{ _("Delete") }}</span>
+            </a>
+            {% endif %}
+            {% if current_user.id != post.user_id %}
+            <a href="{{ url_for('report_post', id=post.id) }}" class="post__report">
+                <i class="material-icons" aria-hidden>flag</i>
+                <span class="hidden-under-desktop">{{ _("Report") }}</span>
+            </a>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+</article>

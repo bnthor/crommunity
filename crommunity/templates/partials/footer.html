@@ -1,0 +1,10 @@
+<footer class="footer" role="contentinfo">
+  <div class="container flex">
+    <div class="footer__info">{{ app_name }} ©{{ now.year }}</div>
+    <nav class="footer__nav">
+      <a href="{{ url_for('contact_us') }}">{{ _("Contact us") }}</a>
+      <a href="{{ url_for('privacy_policy') }}">{{ _("Privacy policy") }}</a>
+      <a href="{{ url_for('about_us') }}">{{ _("About us") }}</a>
+    </nav>
+  </div>
+</footer>

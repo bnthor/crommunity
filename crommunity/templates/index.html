@@ -1,0 +1,43 @@
+{% extends "_layout.html" %}
+{% block content %}
+<div class="sort">
+    <div class="flex container">
+        <a href="{{ url_for('index') }}" class="{% if sort == 'recent' %}is-active{% endif%}">{{ _("Recent") }}</a>
+        <a href="{{ url_for('top_posts') }}" class="{% if sort == 'top' %}is-active{% endif%}">{{ _("Top") }}</a>
+        <a href="{{ url_for('random_posts') }}" class="{% if sort == 'random' %}is-active{% endif%}">{{ _("Random") }}</a>
+    </div>
+</div>
+<div class="flex container">
+    <main class="main posts">
+        {% if not posts %}
+            <article class="post post--none">
+                <h2 class="post__title">{{ _("No post yet") }}</h2>
+            </article>
+        {% else %}
+            {% for post in posts %}
+                {% include 'partials/post.html' %}
+            {% endfor %}
+        {% endif %}
+
+        <div class="pagination">
+            {% if sort == 'random' %}
+            <a href="{{ url_for('random_posts') }}" class="button button--muted">
+                <i class="material-icons" aria-hidden>shuffle</i> {{ _("New random posts") }}
+            </a>
+            {% else %}
+                {% if prev_url %}
+                <a href="{{ prev_url }}" class="button button--muted">
+                    <i class="material-icons" aria-hidden>arrow_back</i> {{ _("Newer posts") }}
+                </a>
+                {% endif %}
+                {% if next_url %}
+                <a href="{{ next_url }}" class="button button--muted">
+                    {{ _("Older posts") }} <i class="material-icons" aria-hidden>arrow_forward</i>
+                </a>
+                {% endif %}
+            {% endif %}
+        </div>
+    </main>
+    {% include 'partials/sidebar.html' %}
+</div>
+{% endblock %}

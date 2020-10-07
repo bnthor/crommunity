@@ -1,0 +1,16 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="center">
+    <div class="center__item">
+      <h1 class="center__title">{{ _("Caution!") }}</h1>
+      <p class="center__subtitle">{{ _("This post will be permanently removed. Are you sure you want to delete it?") }}</p>
+      <form class="center__form" method="POST" action="{{ url_for('delete_post', id=post_id) }}">
+        <div class="center__buttons">
+          <a href="{{ url_for('post', id=post_id) }}" class="button button--muted">{{ _("Cancel") }}</a>
+          <button class="button button--danger" type="submit">{{ _("Delete") }}</button>
+        </div>
+      </form>
+    </div>
+</div>
+{% endblock %}

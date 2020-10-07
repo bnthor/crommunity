@@ -1,0 +1,66 @@
+{% extends "_layout.html" %}
+
+{% block content %}
+<div class="container account">
+  <main class="main">
+    <section class="account__info">
+        <figure class="account__avatar">
+            <img src="{{ user.email | gravatar }}"/>
+            <figcaption>{{ _("Your Gravatar") }}</figcaption>
+        </figure>
+        <div>
+            <h1>{{ _("Welcome") }} {{ user.username }}</h1>
+            <form class="account__form" action="{{ url_for('update_account') }}" method="POST">
+                <fieldset>
+                    <label for="username">{{ _("Change your nickname:") }}</label>
+                    <input type="text" id="username" name="username" placeholder="{{ _('Nickname') }}" value="{{ user.username }}" />
+                </fieldset>
+                <fieldset>
+                    <label for="email">{{ _("Change your email address:") }}</label>
+                    <input type="email" id="email" name="email" placeholder="{{ _('Email address') }}" value="{{ user.email }}" />
+                </fieldset>
+                <fieldset>
+                    <label for="email">{{ _("Update your password:") }}</label>
+                    <input type="password" name="old_password" placeholder="{{ _('Current password') }}" />
+                    <input type="password" id="new_password" name="new_password" placeholder="{{ _('New password') }}" />
+                    <input type="password" id="confirm_password" name="confirm_password" placeholder="{{ _('Confirm password') }}" />
+                </fieldset>
+                <button class="button button--secondary" type="submit">{{ _("Save") }}</button>
+            </form>
+            <div class="message message--danger">
+                <h2 class="message__title">{{ _("Danger") }}</h2>
+                <p class="message__content">{{ _("You cannot undo this action, your account and all your posts will be removed.") }}</p>
+                <a class="button button--danger" href="{{ url_for('delete_account', id=user.id) }}">
+                    {{ _("Delete my account") }}
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="account__posts">
+        <h2>{{ _("My posts") }}</h2>
+        <table>
+            <tr>
+                <th>{{ _('Post title') }}</th>
+                <th>{{ _('Votes') }}</th>
+                <th>{{ _('Comments') }}</th>
+                <th>{{ _('Post link') }}</th>
+                <th>{{ _('Actions') }}</th>
+            </tr>
+            {% for post in user.posts %}
+            <tr>
+                <td>{{ post.title }}</td>
+                <td>{{ post.vote_count }}</td>
+                <td>{{ post.comment_count }}</td>
+                <td><a href="{{ url_for('post', id=post.id) }}">{{ url_for('post', id=post.id) }}</a></td>
+                <td>
+                    <a href="{{ url_for('delete_post', id=post.id) }}" class="button button--danger">
+                        {{ _('Delete') }}
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </section>
+  </main>
+</div>
+{% endblock %}
