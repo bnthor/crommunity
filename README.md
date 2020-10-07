@@ -3,9 +3,17 @@
 ## Requirements
 
 - `brew install pipenv` (optional)
+- `brew install postgresql`
 - clone this project and `cd` to it
+- if on macOs:
+  - ensure Xcode is up to date and additional packages are installed 
+  - `brew install openssl`
+  - add its path to LIBRARY_PATH: `export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/`
+  - `pipenv install psycopg2`
 - `pipenv shell` to enable a virtual environment
 - `pipenv install` to install all dependencies
+
+### 
 
 ## Instance configuration
 

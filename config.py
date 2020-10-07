@@ -11,7 +11,7 @@ LANGUAGES = ['en', 'fr']
 POSTS_PER_PAGE = 10
 
 OWNER_NAME = "John Doe"
-OWNER_EMAIL = "bnrtro@gmail.com"
+OWNER_EMAIL = "john@doe.com"
 OWNER_ADDRESS = "1 main street, New Amsterdam, NY"
 
 HOST_NAME = "OhMyHost"
