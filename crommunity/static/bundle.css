@@ -258,11 +258,12 @@ textarea {
             display: flex; }
 
             .main {
-              flex: 1; }
+              flex: 0 0 auto;
+              max-width: 42rem; }
 
               .sidebar {
                 flex: 0 0 16rem;
-                margin-left: 2rem; }
+                padding-left: 2rem; }
 
                 @media (max-width: 960px) {
                   .sidebar {
@@ -272,15 +273,17 @@ textarea {
 @media (max-width: 768px) {
   .container {
     width: 40rem;   }
-    .sidebar {
-      flex-basis: 12rem;   }
+    .main {
+      max-width: 26rem;   }
+      .sidebar {
+        flex-basis: 12rem;   }
 }
 
 @media (max-width: 640px) {
   .flex {
     display: block;   }
     .sidebar {
-      margin: 2rem 0 0;   }
+      padding: 2rem 0 0;   }
 }
 
 .header {
@@ -721,8 +724,12 @@ textarea {
                         margin: 1rem;
                         list-style-type: decimal;
                         list-style-position: inside; }
-                        .post__content pre code {
-                          font-size: 1rem; }
+                        .post__content hr {
+                          margin: 1rem 0;
+                          border: 0;
+                          border-top: 1px solid #CFD4DA; }
+                          .post__content pre code {
+                            font-size: 1rem; }
 
 .post__actions {
   margin-top: 1.5rem;

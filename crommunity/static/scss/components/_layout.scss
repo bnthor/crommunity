@@ -33,12 +33,13 @@
 }
 
 .main {
-  flex: 1;
+  flex: 0 0 auto;
+  max-width: 42rem;
 }
 
 .sidebar {
   flex: 0 0 16rem;
-  margin-left: 2rem;
+  padding-left: 2rem;
 }
 
 @media (max-width: 960px) {
@@ -51,6 +52,9 @@
   .container {
     width: 40rem;
   }
+  .main {
+    max-width: 26rem;
+  }
   .sidebar {
     flex-basis: 12rem;
   }
@@ -61,6 +65,6 @@
     display: block;
   }
   .sidebar {
-    margin: 2rem 0 0;
+    padding: 2rem 0 0;
   }
 }
