@@ -277,16 +277,19 @@ textarea {
 }
 
 @media (max-width: 640px) {
-  .flex {
-    display: block;   }
-    .sidebar {
-      margin: 2rem 0 0;   }
+  html, body {
+    height: auto;   }
+    .flex {
+      display: block;   }
+      .sidebar {
+        margin: 2rem 0 0;   }
 }
 
 .header {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 3;
   height: 3rem;
   background-color: #8736DD;
   color: #FFFFFF; }
@@ -386,6 +389,7 @@ textarea {
           transform: translateY(0);   }
           .header__nav a {
             display: block;
+            width: 100%;
             text-align: center;
             font-size: 1.25rem;
             padding: 1rem;
@@ -418,7 +422,7 @@ textarea {
     margin: 0;   }
     .header__search input {
       width: 100%;
-      padding: 0.5rem 1rem;
+      padding: 1rem;
       background: #691fb7;
       text-align: center;
       font-size: 1.25rem;
@@ -446,6 +450,11 @@ textarea {
 @media (max-width: 640px) {
   .footer__info, .footer__nav {
     text-align: center;   }
+    .footer__nav {
+      margin-top: 0.5rem;   }
+      .footer__nav a {
+        display: block;
+        margin: 0;   }
 }
 
 .sidebar__text {

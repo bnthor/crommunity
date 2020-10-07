@@ -1,7 +1,8 @@
 .header {
+    position: -webkit-sticky;
     position: sticky;
     top: 0;
-    z-index: 2;
+    z-index: 3;
     height: 3rem;
     background-color: $primary;
     color: $primary-invert;
@@ -136,6 +137,7 @@
 
         a {
             display: block;
+            width: 100%;
             text-align: center;
             font-size: 1.25rem;
             padding: 1rem;
@@ -188,7 +190,7 @@
 
         input {
             width: 100%;
-            padding: .5rem 1rem;
+            padding: 1rem;
             background: darken($primary, 12%);
             text-align: center;
             font-size: 1.25rem;

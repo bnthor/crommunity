@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+    <msapplication>
+        <tile>
+            <square150x150logo src="{{ url_for('static', filename='favicons/mstile-150x150.png') }}"/>
+            <TileColor>#8736dd</TileColor>
+        </tile>
+    </msapplication>
+</browserconfig>

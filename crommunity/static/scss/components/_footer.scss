@@ -24,4 +24,13 @@
     .footer__nav {
         text-align: center;
     }
+
+    .footer__nav {
+        margin-top: .5rem;
+
+        a {
+            display: block;
+            margin: 0;
+        }
+    }
 }
