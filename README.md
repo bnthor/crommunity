@@ -1,11 +1,15 @@
 # Crommunity
 
+Crommunity is a minimal Flask micro community starter kit (like subreddits). There's no third party library, no analytics. Crommunity is aimed at people who want to create simple and positive communities, no thumbs down allowed.
+
+Post pictures, markdown enabled content, comment and upvote. Adminitration and moderation are built-in.
+
 ## Requirements
 
 - `brew install pipenv` (optional)
 - `brew install postgresql`
 - clone this project and `cd` to it
-- if on macOs:
+- if on **macOs**:
   - ensure Xcode is up to date and additional packages are installed 
   - `brew install openssl`
   - add its path to LIBRARY_PATH: `export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/`
@@ -13,11 +17,9 @@
 - `pipenv shell` to enable a virtual environment
 - `pipenv install` to install all dependencies
 
-### 
-
 ## Instance configuration
 
-Create an `instance/config.py` file at the root, in which you must paste and edit these lines:
+Create an `instance/config.py` file at the root, in which you must paste and edit the following lines. It's very important as the secret key is used when hashing passwords, and the `MAIL` settings are used when recovering passwords and all email communications.
 
 ```
 #!/usr/bin/env python3
@@ -88,3 +90,23 @@ To initialize a new language, update `LANGUAGES` in `./config.py` and use:
 ### Translating with the right tools
 
 Editing `.po` files in a regular editor can be a pain, take a look at [poEdit](https://poedit.net).
+
+## Customization
+
+First, you need to edit `./config.py`, here you can set your default language (for now, English and French are supported), and the administrator's credentials.
+
+Crommunity ships with default "privacy-policy" and "about-us" pages which should be enough for most projects. These pages are in english by default and it's **entirely up to you** to make these compliant to GDPR and area specific legislation.
+
+### Theming
+
+Templates are found in `./crommunity/templates`, using the Jinja engine.
+
+Styles are found in `./crommunity/static/scss`, the basic theme is as minimal as possile and should be easy to extend.
+
+Javascript files are in `./crommunity/static/js`, there is as few scripts and dependencies as possible. The only lib there is _highlight.js_ that handles syntax highlighting in markdown posts.
+
+## Tracking and cookie policy
+
+By default, crommunity only uses two cookies: the privacy consent cookie, and the session cookie. **No third party cookie**! One can share posts on social platforms but with plain html links, no GAFA lib is included. 
+
+There's no tracking either, of course, it's entirely up to you to extend crommunity with ads and analytics... But I wouldn't!
