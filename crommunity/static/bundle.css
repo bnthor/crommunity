@@ -183,14 +183,17 @@ textarea {
   z-index: 1;
   top: 0;
   left: 0;
+  width: 100%;
   height: 100%;
+  overflow: hidden;
   color: #868E96; }
   .fileUpload__label:hover {
     cursor: text; }
 
 .fileUpload__button {
   position: absolute;
-  z-index: 0;
+  z-index: 2;
+  pointer-events: none;
   top: 1px;
   right: 1px;
   bottom: 1px;
@@ -258,11 +261,12 @@ textarea {
             display: flex; }
 
             .main {
-              flex: 1; }
+              flex: 1 1 auto;
+              max-width: 42rem; }
 
               .sidebar {
                 flex: 0 0 16rem;
-                margin-left: 2rem; }
+                padding-left: 2rem; }
 
                 @media (max-width: 960px) {
                   .sidebar {
@@ -272,17 +276,29 @@ textarea {
 @media (max-width: 768px) {
   .container {
     width: 40rem;   }
-    .sidebar {
-      flex-basis: 12rem;   }
+    .main {
+      max-width: 26rem;   }
+      .sidebar {
+        flex-basis: 12rem;   }
 }
 
 @media (max-width: 640px) {
   html, body {
-    height: auto;   }
+    height: 100%;
+    max-width: 100%;
+    overflow-x: hidden;   }
     .flex {
       display: block;   }
-      .sidebar {
-        margin: 2rem 0 0;   }
+      .wrapper {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;   }
+        .header, .footer {
+          flex: 0;   }
+          .content {
+            flex: 1;   }
+            .sidebar {
+              padding: 0 1.5rem;   }
 }
 
 .header {
@@ -638,8 +654,10 @@ textarea {
 
   @media (max-width: 640px) {
     .consent {
-      max-width: 100%;
+      width: auto;
+      max-width: initial;
       bottom: 0;
+      right: 0;
       left: 0;   }
 }
 
@@ -730,8 +748,12 @@ textarea {
                         margin: 1rem;
                         list-style-type: decimal;
                         list-style-position: inside; }
-                        .post__content pre code {
-                          font-size: 1rem; }
+                        .post__content hr {
+                          margin: 1rem 0;
+                          border: 0;
+                          border-top: 1px solid #CFD4DA; }
+                          .post__content pre code {
+                            font-size: 1rem; }
 
 .post__actions {
   margin-top: 1.5rem;

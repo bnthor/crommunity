@@ -1,4 +1,9 @@
 {% extends "_layout.html" %}
+
+{% block title %}
+    {{ _("Reported comments") }}
+{% endblock %}
+
 {% block content %}
 <div class="container admin admin--comments">
     <h1><a href="{{ url_for('admin') }}">{{ _('Admin') }}</a> / {{ _("Reported comments") }}</h1>

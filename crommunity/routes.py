@@ -498,42 +498,46 @@ def post(id):
     if request.method == 'POST':
         post = Post.query.filter_by(id=id).first()
 
-        title = request.form.get("title")
-        picture = request.files["picture"]
-        link = request.form.get("link")
-        content = request.form.get("content")
+        new_title = request.form.get("title")
+        new_picture = request.files["picture"]
+        new_link = request.form.get("link")
+        new_content = request.form.get("content")
 
         if not current_user.id == post.user_id:
             flash(gettext("You're not the author of this post!"), "danger")
             return redirect(url_for('index'))
 
-        if not title:
+        if not new_title:
             flash(gettext("Title is required"), "danger")
             return redirect(url_for('edit_post', id=id))
 
-        if not link and not content:
+        if not new_link and not new_content:
             flash(gettext("Posts should contain a least a link or some content"), "danger")
             return redirect(url_for('edit_post', id=id))
 
-        filename = secure_filename(picture.filename)
+        filename = secure_filename(new_picture.filename)
 
-        # If filename is empty or different from the existing one
-        if filename != '' and filename != post.picture:
+        if filename != '':
             file_ext = os.path.splitext(filename)[1]
             if file_ext not in app.config['UPLOAD_EXTENSIONS'] or \
-                    file_ext != validate_image(picture.stream):
+                    file_ext != validate_image(new_picture.stream):
                 flash(gettext("Invalid image format"), "danger")
             filename = str(datetime.now()).replace(":", "-") + file_ext
-            picture.save(os.path.join(app.root_path, app.config['UPLOAD_FOLDER'], filename))
-
-        # Else, delete the existing picture
-        if (filename == '' or filename != post.picture) and post.picture:
+            # Remove the old picture
             os.remove(os.path.join(app.root_path, app.config['UPLOAD_FOLDER'], post.picture))
+            # Save the new one
+            new_picture.save(os.path.join(app.root_path, app.config['UPLOAD_FOLDER'], filename))
+            post.picture = filename
 
-        post.title = title
-        post.picture = filename
-        post.link = link
-        post.content = content
+        if new_title != post.title:
+            post.title = new_title
+
+        if new_link != post.link:
+            post.link = new_link
+
+        if new_content != post.content:
+            post.content = new_content
+
         db.session.commit()
 
         # Flash the update success
