@@ -4,6 +4,8 @@ Crommunity is a minimal Flask micro community starter kit (like subreddits). The
 
 Post pictures, markdown enabled content, comment and upvote. Adminitration and moderation are built-in.
 
+![preview](https://image.noelshack.com/fichiers/2020/43/3/1603293184-crommunity.png)
+
 ## Requirements
 
 - `brew install pipenv` (optional)
