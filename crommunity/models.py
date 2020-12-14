@@ -90,9 +90,13 @@ class Post(db.Model):
         super().__init__(*args, **kwargs)
         self.created = datetime.now()
         if self.content:
-            html = markdown(self.content)
-            text = ''.join(BeautifulSoup(html, features="html.parser").findAll(text=True))
-            self.excerpt = text[:140] + (text[140:] and '...')
+            self.excerpt = self.make_excerpt(self.content)
+            
+    def make_excerpt(self, full_text):
+        html = markdown(full_text)
+        text = ''.join(BeautifulSoup(html, features="html.parser").findAll(text=True))
+        return text[:140] + (text[140:] and '...')
+        
 
 class Vote(db.Model):
     """Votes on post, upvotes when type = True"""

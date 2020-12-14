@@ -542,6 +542,7 @@ def post(id):
 
         if new_content != post.content:
             post.content = new_content
+            post.excerpt = post.make_excerpt(new_content)
 
         db.session.commit()
 
