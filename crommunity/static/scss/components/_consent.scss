@@ -29,8 +29,10 @@
 
 @media (max-width: 640px) {
     .consent {
-        max-width: 100%;
+        width: auto;
+        max-width: initial;
         bottom: 0;
+        right: 0;
         left: 0;
     }
 }

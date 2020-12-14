@@ -1,5 +1,9 @@
 {% extends "_layout.html" %}
 
+{% block title %}
+    {{ _("Edit post") }}
+{% endblock %}
+
 {% block content %}
 <div class="center">
     <div class="center__item center__item--large">
@@ -10,9 +14,7 @@
           <div class="fileUpload">
             <input id="picture" name="picture" type="file" accept="image/*" />
             {% if post.picture %}
-              <label class="fileUpload__label" for="picture" data-placeholder="{{ _('Post cover image') }}">
-                {{ post.picture }}
-              </label>
+              <label class="fileUpload__label is-placeholder" for="picture" data-placeholder="{{ _('Replace the cover image') }}"></label>
             {% else %}
               <label class="fileUpload__label is-placeholder" for="picture" data-placeholder="{{ _('Post cover image') }}"></label>
             {% endif %}

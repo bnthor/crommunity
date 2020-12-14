@@ -4,6 +4,8 @@ Crommunity is a minimal Flask micro community starter kit (like subreddits). The
 
 Post pictures, markdown enabled content, comment and upvote. Adminitration and moderation are built-in.
 
+![preview](https://image.noelshack.com/fichiers/2020/43/3/1603293184-crommunity.png)
+
 ## Requirements
 
 - `brew install pipenv` (optional)
@@ -114,3 +116,14 @@ Javascript files are in `./crommunity/static/js`, there is as few scripts and de
 By default, crommunity only uses two cookies: the privacy consent cookie, and the session cookie. **No third party cookie**! One can share posts on social platforms but with plain html links, no GAFA lib is included.
 
 There's no tracking either, of course, it's entirely up to you to extend crommunity with ads and analytics... But I wouldn't!
+
+## Roadmap
+
+### V2 features
+
+- Private messaging
+- Nested comments (use the parent row in comments model)
+- Cleanup routes.py with [blueprints](https://flask.palletsprojects.com/en/1.1.x/blueprints)
+- Built-in avatar upload instead of unsing gravatar's
+- Add posts tags
+- Add social html tags to improve posts sharing

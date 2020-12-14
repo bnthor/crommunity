@@ -1,9 +1,9 @@
 <aside class="consent">
     <p>
         {{ _("We use cookies to keep a registered user logged in between visits.") }}
-        <a href="{{ url_for('privacy_policy') }}">{{ _("To learn more, read our privacy policy.") }}</a>
+        <a href="{{ url_for('privacy_policy') }}">{{ _("To learn more, read our privacy policy.") }}</a><br/>
+        {{ _("By choosing I Accept, you consent to our use of cookies.") }}
     </p>
-    <p>{{ _("By choosing I Accept, you consent to our use of cookies.") }}</p>
 
     <button class="button button--default consent__accept">
         <strong>{{ _("I accept") }}</strong>

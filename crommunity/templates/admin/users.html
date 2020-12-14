@@ -1,4 +1,9 @@
 {% extends "_layout.html" %}
+
+{% block title %}
+    {{ _("Members") }}
+{% endblock %}
+
 {% block content %}
 <div class="container admin">
     <h1><a href="{{ url_for('admin') }}">{{ _('Admin') }}</a> / {{ _("Members") }}</h1>
