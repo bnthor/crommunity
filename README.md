@@ -10,7 +10,7 @@ Post pictures, markdown enabled content, comment and upvote. Adminitration and m
 - `brew install postgresql`
 - clone this project and `cd` to it
 - if on **macOs**:
-  - ensure Xcode is up to date and additional packages are installed 
+  - ensure Xcode is up to date and additional packages are installed
   - `brew install openssl`
   - add its path to LIBRARY_PATH: `export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/`
   - `pipenv install psycopg2`
@@ -64,6 +64,10 @@ You should install postgreSQL for your OS first. Then *DATABASE_URL* should be, 
 
 Now you can create the project's tables by launching `python3 db_init.py` at the root. Models are defined in `crommunity/models.py`.
 
+#### Promoting the first user
+
+With SQLite, at the root, launch `sqlite3 my_database.db`, then `UPDATE user SET role=3 WHERE id=1;`. The first user is now an administrator.
+
 ## Launching the dev server
 
 First, enable the virtual env with `pipenv shell`, then use `pipenv run flask run`.
@@ -107,6 +111,6 @@ Javascript files are in `./crommunity/static/js`, there is as few scripts and de
 
 ## Tracking and cookie policy
 
-By default, crommunity only uses two cookies: the privacy consent cookie, and the session cookie. **No third party cookie**! One can share posts on social platforms but with plain html links, no GAFA lib is included. 
+By default, crommunity only uses two cookies: the privacy consent cookie, and the session cookie. **No third party cookie**! One can share posts on social platforms but with plain html links, no GAFA lib is included.
 
 There's no tracking either, of course, it's entirely up to you to extend crommunity with ads and analytics... But I wouldn't!

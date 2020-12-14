@@ -18,7 +18,7 @@
                 {% include 'partials/post.html' %}
             {% endfor %}
         {% endif %}
-
+        {% if paginates %}
         <div class="pagination">
             {% if sort == 'random' %}
             <a href="{{ url_for('random_posts') }}" class="button button--muted">
@@ -37,6 +37,7 @@
                 {% endif %}
             {% endif %}
         </div>
+        {% endif %}
     </main>
     {% include 'partials/sidebar.html' %}
 </div>

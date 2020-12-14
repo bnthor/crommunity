@@ -59,6 +59,7 @@ def index():
             .order_by(Post.created.desc())\
             .paginate(page, app.config['POSTS_PER_PAGE'], False)
 
+    paginates = posts.has_next or posts.has_prev
     next_url = url_for('index', page=posts.next_num) if posts.has_next else None
     prev_url = url_for('index', page=posts.prev_num) if posts.has_prev else None
 
@@ -69,6 +70,7 @@ def index():
         sort='recent',
         user_count=user_count,
         posts=posts,
+        paginates=paginates,
         next_url=next_url,
         prev_url=prev_url
     )
@@ -82,6 +84,7 @@ def top_posts():
             .order_by(Post.vote_count.desc())\
             .paginate(page, app.config['POSTS_PER_PAGE'], False)
 
+    paginates = posts.has_next or posts.has_prev
     next_url = url_for('top_posts', page=posts.next_num) if posts.has_next else None
     prev_url = url_for('top_posts', page=posts.prev_num) if posts.has_prev else None
 
@@ -92,6 +95,7 @@ def top_posts():
         sort='top',
         user_count=user_count,
         posts=posts,
+        paginates=paginates,
         next_url=next_url,
         prev_url=prev_url
     )
@@ -114,7 +118,8 @@ def random_posts():
         "index.html",
         sort='random',
         user_count=user_count,
-        posts=posts
+        posts=posts,
+        paginates=True
     )
 
 @app.route('/search', methods=['POST'])
